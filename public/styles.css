@@ -3,7 +3,7 @@
   Idess Lee, Mitchell Massie for DubHacks 2020
  */
 
- body {
-   margin: 0;
-   padding: 0;
- }
+* {
+  margin: 0;
+  padding: 0;
+}
