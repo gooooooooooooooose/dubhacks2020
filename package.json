@@ -1,9 +1,10 @@
 {
   "name": "dubhacks2020",
   "version": "1.0.0",
-  "description": "A front-end repository for DubHacks 2020.",
+  "description": "A front-end repository for DubHacks 20ß20.",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

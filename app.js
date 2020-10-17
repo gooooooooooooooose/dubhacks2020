@@ -26,6 +26,13 @@ const SERVER_ERROR_MESSAGE = "An error occurred on the server. Try again later."
 const SERVER_URL = "localhost:8000";
 
 /**
+ * Mock request to get information on a senator.
+ */
+app.get("/senator/:senator", async (req, res) => {
+
+});
+
+/**
  * Mock get request for a statement.
  */
 app.post("/query", async (req, res) => {
