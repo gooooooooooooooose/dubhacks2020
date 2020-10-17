@@ -6,4 +6,55 @@
 * {
   margin: 0;
   padding: 0;
+  background-color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+}
+
+main {
+  margin: 30vh;
+  width: 100vw;
+}
+
+h1 {
+  font-family: 'Domine', serif;
+  font-size: 35px;
+  font-weight: 100;
+}
+
+input, label {
+  border: 0.1px solid black;
+  height: 35px;
+  padding: 3px;
+  padding-left: 10px;
+}
+
+button {
+  border: none;
+}
+
+button:focus, button:active {
+  border: none;
+  outline: none;
+}
+
+#search-section {
+  width: 800px;
+}
+
+#search-bar {
+  margin-top: 0.5em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#search-bar input {
+  width: 70%;
+}
+
+#search-bar button {
+  border: none;
+  font-size: 50px;
+  font-family: 'Roboto', sans-serif;
+  margin-left: 50px;
 }
