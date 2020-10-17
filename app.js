@@ -4,6 +4,10 @@
  */
 "use strict";
 
+// To support HTTP requests
+const express = require("express");
+const app = express();
+
 app.use(express.static("public"));
 
 const PORT = process.env.PORT || 8000;
