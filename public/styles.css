@@ -121,8 +121,12 @@ button:hover {
   height: 39px;
 }
 
+#how-it-works {
+  margin: 15vh auto 15vh 15vw;
+}
+
 #hot-topics {
-  margin: 20vh auto 15vh 15vw;
+  margin-left: 15vw;
 }
 
 .example {
@@ -162,16 +166,12 @@ button:hover {
 }
 
 .display-senators .senator {
-  margin: 1em;
+  margin: 2em;
   width: 120px;
 }
 
 .display-senators img {
   width: 120px;
-}
-
-.senator {
-  margin-left: 16em;
 }
 
 .hot-topics-buttons button {
