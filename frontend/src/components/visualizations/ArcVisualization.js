@@ -233,6 +233,7 @@ class ArcVisualization extends React.Component {
 
     return (
       <div>
+        <h1>Who in the {this.props.chamber} agrees with: "{this.props.prompt}"</h1>
         <CanvasJSChart options={options} />
         <CanvasJSChart options={horizontalBar} />
       </div >
