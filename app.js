@@ -9,6 +9,7 @@ const express = require("express");
 const app = express();
 
 app.use(express.static("frontend/public"));
+// please
 
 const PORT = process.env.PORT || 8000;
 app.listen(PORT);
