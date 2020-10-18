@@ -11,15 +11,18 @@ class ArcVisualization extends React.Component {
     super(props);
     this.state = {
       data: null,
+      length: 0,
     }
   }
 
   retrievePrediction = () => {
-    fetch(`${URL}/base/?query=${this.props.prompt}&chamber=${this.props.chamber}`)
+    fetch(`${URL}/base/?statement=${this.props.prompt}&chamber=${this.props.chamber}`)
       .then(payload => payload.json())
       .then(json => {
+        let results = json.results;
         this.setState({
-          data: json.results
+          data: results,
+          length: results.length
         })
       })
   }
@@ -40,13 +43,22 @@ class ArcVisualization extends React.Component {
     if (members === 100) {
       let m = 0;
       for (let row = 0; row < 6; row++) {
+        if (m > this.state.length) {
+          break;
+        }
         for (let col = 0; col < 21; col++) {
+          if (m > this.state.length) {
+            break;
+          }
           let p = Math.random();
           let name = '---';
           let state = 'XX';
           let pic = '';
           
           if (this.state.data !== null) {
+            if (this.state.data[m] === undefined) {
+              break;
+            }
             p = this.state.data[m].agree;
             name = this.state.data[m].name;
             state = this.state.data[m].state
@@ -93,6 +105,9 @@ class ArcVisualization extends React.Component {
           let pic = '';
           
           if (this.state.data !== null) {
+            if (this.state.data[m] === undefined) {
+              break;
+            }
             p = this.state.data[m].agree;
             name = this.state.data[m].name;
             state = this.state.data[m].state
