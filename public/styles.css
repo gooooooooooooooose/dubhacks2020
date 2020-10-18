@@ -122,15 +122,35 @@ button:hover {
   height: 39px;
 }
 
-#how-it-works {
+main > section {
   margin-top: 15vh;
 }
 
-#opinions {
+#opinions, #but {
   margin-top: 2em;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
+}
+
+ul {
+  margin: 1em 2em auto 2em;
+}
+
+ul li {
+  margin-top: 5px;
+  line-height: 120%;
+}
+
+#but div {
+  width: 60%;
+}
+
+#but section {
+  width: 40%;
+  display: flex;
+  margin-top: 2em;
   align-items: center;
 }
 
@@ -144,6 +164,18 @@ button:hover {
   width: 220px;
   padding: 10px;
   text-align: center;
+}
+
+#usage {
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+}
+
+#usage-example {
+  margin-top: 2em;
+  display: flex;
+  justify-content: center;
 }
 
 main > section {
