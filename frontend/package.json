@@ -10,9 +10,10 @@
     "react": "^16.14.0",
     "react-charts": "^2.0.0-beta.7",
     "react-dom": "^16.14.0",
+    "react-scripts": "3.4.3",
+    "typescript": "^4.0.3",
     "react-faux-dom": "^4.5.0",
-    "react-resizable": "^1.11.0",
-    "react-scripts": "3.4.3"
+    "react-resizable": "^1.11.0"
   },
   "scripts": {
     "start": "react-scripts start",
