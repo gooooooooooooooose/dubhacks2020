@@ -1,1 +1,1 @@
-web: node frontend/App.tsx
+web: node app.js
