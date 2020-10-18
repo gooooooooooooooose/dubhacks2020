@@ -1,6 +1,8 @@
 import React from 'react';
 
 import CanvasJSReact from '../../lib/canvasjs.react'
+import URL from '../../backendurl';
+
 const CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 class ArcVisualization extends React.Component {
@@ -8,23 +10,43 @@ class ArcVisualization extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: null
+      data: null,
     }
+  }
+
+  retrievePrediction = () => {
+    fetch(`${URL}/base/?query=${this.props.prompt}&chamber=${this.props.chamber}`)
+      .then(payload => payload.json())
+      .then(json => {
+        this.setState({
+          data: json.results
+        })
+      })
+  }
+
+  componentDidMount = () => {
+    this.retrievePrediction()
   }
 
   render = () => {
     let members;
 
-    if (this.props.chamber === 'lower') {
+    if (this.props.chamber === 'house') {
       members = 435;
-    } else if (this.props.chamber === 'upper') {
+    } else if (this.props.chamber === 'senate') {
       members = 100;
     }
     let dataPoints = [];
     if (members === 100) {
+      let m = 0;
       for (let row = 0; row < 6; row++) {
         for (let col = 0; col < 21; col++) {
           let p = Math.random();
+          
+          if (this.state.data !== null) {
+            p = this.state.data[m++].agree;
+          }
+          
           let c = '0,0,0';
           let i = 0.5
 
@@ -47,14 +69,28 @@ class ArcVisualization extends React.Component {
             y: col,
             p: p,
             markerColor: `rgba(${c},${i})`,
-            markerSize: 9
+            markerSize: 9,
+            img: `<img src="${URL}/static/base/wa-larsen.jpg" width=50 height=50>`
           });
         }
       }
     } else if (members === 435) {
+      let m = 0;
       for (let row = 0; row < 16; row++) {
         for (let col = 0; col < 30; col++){
           let p = Math.random();
+          let name = '---';
+          let state = 'XX';
+          let pic = '';
+          
+          if (this.state.data !== null) {
+            p = this.state.data[m].agree;
+            name = this.state.data[m].name;
+            state = this.state.data[m].state
+            let namesplit = name.split(' ');
+            pic = `<img src="${URL}/static/base/${state}-${namesplit[namesplit.length - 1]}.jpg" width=50 height=50>`
+          }
+
           let c = '0,0,0';
           let i = 0.5
 
@@ -66,14 +102,17 @@ class ArcVisualization extends React.Component {
             i = (0.5 - p) * 2;
           }
           dataPoints.push({
-            name: 'Norton Pengra',
-            state: 'WA',
+            name: name,
+            state: state,
             x: row,
             y: col,
             p: p,
             markerColor: `rgba(${c},${i})`,
             markerSize: 7,
+            img: pic
           })
+
+          m++;
         }
       }
     }
@@ -97,7 +136,7 @@ class ArcVisualization extends React.Component {
       data: [
         {
           type: "scatter",
-          toolTipContent: "<strong>{name}</strong> ({state}) <br/> Agreement Probability: {p}",
+          toolTipContent: "{img}<br/><strong>{name}</strong> ({state}) <br/> Agreement Probability: {p}",
           dataPoints: dataPoints,
           options: {
             backgroundColor: 'rgba(0,0,0,1)' 
