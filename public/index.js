@@ -18,16 +18,19 @@
    */
   function init() {
     id("search-button").addEventListener("click", getQueryResult);
+  }
 
+  function getQueryResult() {
     let senateLine = id("senate-line");
     drawAnalysisLine(senateLine.children[0], senateLine.children[1], id("senate-percentages"), 0.7);
 
     let houseLine = id("house-line");
     drawAnalysisLine(houseLine.children[0], houseLine.children[1], id("house-percentages"), 0.65);
-  }
 
-  function getQueryResult() {
-    console.log("sending request...");
+    let sections = qsa("main > section");
+    sections.forEach((section) => {
+      section.classList.toggle("hidden");
+    });
   }
 
   function drawAnalysisLine(yesLine, noLine, percentages, percentYes) {
