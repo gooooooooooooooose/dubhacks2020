@@ -12,6 +12,10 @@
 }
 
 main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: 20vh;
   width: 100vw;
 }
@@ -55,7 +59,7 @@ button:focus, button:active {
 }
 
 #search-section {
-  margin-left: 20vw;
+  margin-left: -20vw;
   width: 800px;
 }
 
@@ -77,7 +81,12 @@ button:focus, button:active {
   margin-left: 50px;
 }
 
+#suggestions {
+  margin-top: 20vh;
+}
+
 .example {
+  margin-top: 40px;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -117,10 +126,14 @@ button:focus, button:active {
 
 .display-senators img {
   width: 120px;
-  border-top: 8px solid #CD5252;
 }
 
-.senator p span {
-  color: #CD5252;
-  font-weight: 500;
+.senator {
+  margin-left: 16em;
+}
+
+.suggestion-buttons button {
+  border: 0.1px solid black;
+  padding: 15px 30px 15px 30px;
+  margin-right: 1em;
 }
