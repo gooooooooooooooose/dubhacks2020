@@ -18,10 +18,26 @@
    */
   function init() {
     id("search-button").addEventListener("click", getQueryResult);
+
+    let senateLine = id("senate-line");
+    drawAnalysisLine(senateLine.children[0], senateLine.children[1], id("senate-percentages"), 0.7);
+
+    let houseLine = id("house-line");
+    drawAnalysisLine(houseLine.children[0], houseLine.children[1], id("house-percentages"), 0.65);
   }
 
   function getQueryResult() {
     console.log("sending request...");
+  }
+
+  function drawAnalysisLine(yesLine, noLine, percentages, percentYes) {
+      yesLine.style.width = Math.round(percentYes * 500) + "px";
+      noLine.style.width = Math.round((1 - percentYes) * 500) + "px";
+
+      percentages.children[0].innerHTML = Math.round(percentYes * 100) + "%";
+      percentages.children[1].innerHTML = Math.round((1 - percentYes) * 100) + "%";
+
+      console.log(yesLine.style.width)
   }
 
   /**

@@ -15,10 +15,10 @@
 </head>
 <body>
   <header>
-    <div><img src="logo.svg"></div>
+    <div><img src="img/logo.svg"></div>
   </header>
   <main>
-    <section id="search-section">
+    <section id="search-section" class="hidden">
       <section id="title">
         <h1>Find out which members of Congress agrees with you</h1>
       </section>
@@ -29,14 +29,14 @@
     </section>
 
     <!-- How it workds -->
-    <section id="how-it-works">
+    <section id="how-it-works" class="hidden">
       <section class="section-header">
         <h1>How it works</h1>
         <h4></h4>
       </section>
       <section id="opinions">
         <div>
-          <img src="cloud.svg">
+          <img src="img/cloud.svg">
         </div>
         <div>
           <h2>You've got an opinion...</h2>
@@ -57,9 +57,9 @@
           </ul>
         </div>
         <section>
-          <img src="cloud.svg">
-          <img src="arrow.svg">
-          <img src="mail.svg">
+          <img src="img/cloud.svg">
+          <img src="img/arrow.svg">
+          <img src="img/mail.svg">
         </section>
       </section>
       <section id="usage">
@@ -67,20 +67,20 @@
           <h2>Use Standpoint!</h2>
         </div>
         <div id="usage-example">
-          <img src="usage.svg">
+          <img src="img/usage.svg">
         </div>
         <div>
           <ul>
             <li>&#x25cf;&nbsp;&nbsp;Type in any opinion and we will sift through thousands of data points on bills and everyone’s voting history in congress.</li>
             <li>&#x25cf;&nbsp;&nbsp;Match it to the people and policies you should be aware of the most.</li>
-            <li>&#x25cf;&nbsp;&nbsp;You’ll be able to stay on top of what you most care about, and be able to take action in a concrete way</li>
+            <li>&#x25cf;&nbsp;&nbsp;You’ll be able to stay on top of what you most care about, and be able to take action in a concrete way.</li>
           </ul>
         </div>
       </section>
     </section>
 
     <!-- Hot topics -->
-    <section id="hot-topics">
+    <section id="hot-topics" class="hidden">
       <section class="section-header">
         <h1>Hot topics</h1>
         <h4>More topics &xrarr;</h4>
@@ -102,17 +102,17 @@
         </section>
         <section class="display-senators">
           <section class="senator">
-            <img style="border-top: 8px solid #CD5252" src="tn-alexander.png">
+            <img style="border-top: 8px solid #CD5252" src="img/tn-alexander.png">
             <h3>Lamar Alexander</h3>
             <p><span style="color:#CD5252">[R]</span> TN Senator</p>
           </section>
           <section class="senator">
-            <img style="border-top: 8px solid #4F67E4" src="tn-blackburn.jpg">
+            <img style="border-top: 8px solid #4F67E4" src="img/tn-blackburn.jpg">
             <h3>Marsha Blackburn</h3>
             <p><span style="color:#4F67E4">[D]</span> TN Senator</p>
           </section>
           <section class="senator">
-            <img style="border-top: 8px solid #DFC01E" src="mn-coleman.jpeg">
+            <img style="border-top: 8px solid #DFC01E" src="img/mn-coleman.jpeg">
             <h3>Norm<br>Coleman</h3>
             <p><span style="color:#DFC01E">[I]</span> MN Senator</p>
           </section>
@@ -135,19 +135,137 @@
         </section>
         <section class="display-senators">
           <section class="senator">
-            <img style="border-top: 8px solid #CD5252" src="tn-alexander.png">
+            <img style="border-top: 8px solid #CD5252" src="img/tn-alexander.png">
             <h3>Lamar Alexander</h3>
             <p><span style="color:#CD5252">[R]</span> TN Senator</p>
           </section>
           <section class="senator">
-            <img style="border-top: 8px solid #4F67E4" src="tn-blackburn.jpg">
+            <img style="border-top: 8px solid #4F67E4" src="img/tn-blackburn.jpg">
             <h3>Marsha Blackburn</h3>
             <p><span style="color:#4F67E4">[D]</span> TN Senator</p>
           </section>
           <section class="senator">
-            <img style="border-top: 8px solid #DFC01E" src="mn-coleman.jpeg">
+            <img style="border-top: 8px solid #DFC01E" src="img/mn-coleman.jpeg">
             <h3>Norm<br>Coleman</h3>
             <p><span style="color:#DFC01E">[I]</span> MN Senator</p>
+          </section>
+        </section>
+      </section>
+    </section>
+
+    <!-- Results page -->
+    <section id="recap">
+      <p>You searched...</p>
+      <br>
+      <div>
+        <h1>"Second Amendment rights"</h1>
+      </div>
+    </section>
+    <section id="senate-map">
+      <div id="senate-results">
+        <img src="img/senate.png">
+      </div>
+      <div id="line-div">
+        <div id="senate-line">
+          <div class="yes"></div>
+          <div class="no"></div>
+        </div>
+        <div id="senate-percentages">
+          <div>70%</div>
+          <div style="text-align: right;">30%</div>
+        </div>
+      </div>
+    </section>
+    <section id="house-map">
+      <div id="house-results">
+        <img src="img/house.png">
+      </div>
+      <div id="line-div">
+        <div id="house-line">
+          <div class="yes"></div>
+          <div class="no"></div>
+        </div>
+        <div id="house-percentages">
+          <div>70%</div>
+          <div style="text-align: right;">30%</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hot topics -->
+    <section id="congress">
+      <section class="section-header">
+        <h1>Congress</h1>
+        <h4>More &xrarr;</h4>
+      </section>
+      <!-- Example 1-->
+      <section class="example-result">
+        <section class="display-senator-results">
+          <section class="senator-result">
+            <img style="border-top: 8px solid #CD5252" src="img/tn-alexander.png">
+            <h3>Lamar Alexander</h3>
+            <p><span style="color:#CD5252">[R]</span> TN Senator</p>
+            <section class="voted">
+              <h3>Voted</h3>
+              <section class="vote">
+                <button class="fail">NO</button>
+                <p>
+                  Enhanced Background Checks Act of 2019
+                  <br><strong>H.R.1112 &rightarrow;</strong>
+                </p>
+              </section>
+              <section class="vote">
+                <button class="pass">YES</button>
+                <p>
+                  Concealed Carry Reciprocity Act of 2017
+                  <br><strong>H.R.38 &rightarrow;</strong>
+                </p>
+              </section>
+            </section>
+          </section>
+          <section class="senator-result">
+            <img style="border-top: 8px solid #4F67E4" src="img/tn-blackburn.jpg">
+            <h3>Marsha Blackburn</h3>
+            <p><span style="color:#4F67E4">[D]</span> TN Senator</p>
+            <section class="voted">
+              <h3>Voted</h3>
+              <section class="vote">
+                <button class="fail">NO</button>
+                <p>
+                  Enhanced Background Checks Act of 2019
+                  <br><strong>H.R.1112 &rightarrow;</strong>
+                </p>
+              </section>
+              <section class="vote">
+                <button class="pass">YES</button>
+                <p>
+                  Concealed Carry Reciprocity Act of 2017
+                  <br><strong>H.R.38 &rightarrow;</strong>
+                </p>
+              </section>
+            </section>
+          </section>
+          <section class="senator-result">
+            <img style="border-top: 8px solid #DFC01E" src="img/mn-coleman.jpeg">
+            <h3>Norm Coleman</h3>
+            <p><span style="color:#DFC01E">[I]</span> MN Senator</p>
+            <section class="voted">
+              <h3>Voted</h3>
+              <section class="vote">
+                <button class="fail">NO</button>
+                <p>
+                  Enhanced Background Checks Act of 2019
+                  <br><strong>H.R.1112 &rightarrow;</strong>
+                </p>
+              </section>
+              <section class="vote">
+                <button class="pass">YES</button>
+                <p>
+                  Concealed Carry Reciprocity Act of 2017
+                  <br><strong>H.R.38 &rightarrow;</strong>
+                </p>
+              </section>
+            </section>
           </section>
         </section>
       </section>
