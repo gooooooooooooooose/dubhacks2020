@@ -6,7 +6,7 @@
 * {
   margin: 0;
   padding: 0;
-  background-color: #ffffff;
+  background-color: #FBFAF9;
   overflow-x: hidden;
   font-family: 'Roboto', sans-serif;
 }
@@ -16,12 +16,10 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 20vh;
-  width: 100vw;
 }
 
 main > section {
-  margin-top: 5em;
+  margin-top: 3em;
 }
 
 h1, h2, h3 {
@@ -42,11 +40,26 @@ h3 {
   font-size: 15px;
 }
 
+header {
+  margin-top: 5vh;
+  margin-left: 15vw;
+  display: flex;
+  flex-direction: row;
+}
+
+header img {
+  width: 80%;
+}
+
 input, label {
   border: 0.1px solid black;
   height: 35px;
   padding: 1px;
   padding-left: 15px;
+}
+
+input:focus, input:active {
+  outline: none;
 }
 
 input::placeholder {
@@ -62,7 +75,7 @@ button, button:hover {
 }
 
 button {
-  background-color: white;
+  background-color: transparent;
   color: black;
   border: none;
 }
@@ -73,52 +86,48 @@ button:focus, button:active {
 }
 
 button:hover {
-  color: #ffffff;
+  color: #FBFAF9;
   background-color: black;
 }
 
 #search-section {
-  margin-left: -20vw;
-  width: 800px;
+  padding: 200px 300px 200px 300px;
+  border: 4px solid black;
+  width: 40%;
 }
 
 #search-bar {
-  margin-top: 0.5em;
+  margin-top: 2em;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
+#title {
+  width: 500px;
+}
+
 #search-bar input {
-  width: 70%;
+  width: 80%;
 }
 
 #search-bar button {
-  transition: none;
-  border: none;
-  font-size: 50px;
   font-family: 'Roboto', sans-serif;
-  margin-left: 50px;
-}
-
-#search-bar button, #search-bar button:hover {
-  transition-property: margin-left;
-  transition-duration: .3s;
-  transition-timing-function: ease-in-out;
-}
-
-#search-bar button:hover {
-  background-color: white;
-  color: black;
-  margin-left: 60px;
+  text-align: center;
+  width: 15%;
+  border-right: 0.1px solid black;
+  border-top: 0.1px solid black;
+  border-bottom: 0.1px solid black;
+  height: 39px;
 }
 
 #hot-topics {
-  margin-top: 20vh;
+  margin: 20vh auto 15vh 15vw;
 }
 
 .example {
   margin-top: 40px;
+  margin-left: 5vw;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
