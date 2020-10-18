@@ -43,25 +43,6 @@
       console.log(yesLine.style.width)
   }
 
-  /**
-   * Checks the status of a response. Throws an error if the response is not ok.
-   * @param {object} response - The response returned from a fetch request.
-   * @returns {object} The same response passed in if it is ok, throws an error if not.
-   */
-  function checkStatus(response) {
-    if (response.ok) {
-      return response;
-    }
-    throw Error("Error in request: " + response.statusText);
-  }
-
-  /**
-   * Handles an error in the fetch call by displaying the error message and disabling all buttons.
-   */
-  function handleError() {
-    console.log("error");
-  }
-
   /** ------------------------- Helper Functions  ------------------------- */
 
   /**
