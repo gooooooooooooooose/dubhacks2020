@@ -1,0 +1,26 @@
+.senator h3 {
+   margin-top: 10px;
+}
+ 
+.senator p {
+   margin-top: 5px;
+   font-size: 12px;
+}
+
+.display-senators {
+   padding: 10px;
+   display: flex;
+   flex-direction: row;
+   margin-left: 5em;
+   width: 60%;
+}
+ 
+.display-senators .senator {
+   margin: 2em;
+   width: 120px;
+}
+ 
+.display-senators img {
+   width: 120px;
+   max-height: 120px;
+}
