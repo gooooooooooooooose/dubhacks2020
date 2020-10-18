@@ -12,6 +12,9 @@ class ArcVisualization extends React.Component {
     this.state = {
       data: null,
       length: 0,
+      agree_pct: 0,
+      disagree_pct: 0,
+      unknown_pct: 1.0
     }
   }
 
@@ -20,9 +23,21 @@ class ArcVisualization extends React.Component {
       .then(payload => payload.json())
       .then(json => {
         let results = json.results;
+        let agree = 0;
+        let unknown = 0;
+        let disagree = 0;
+        results.map((v) => {
+          agree += (v.agree > 0.6);
+          disagree += (v.agree < 0.4);
+          unknown += (v.agree >= 0.4 && v.agree <= 0.6);
+        })
+        let total = agree + unknown + disagree;
         this.setState({
           data: results,
-          length: results.length
+          length: results.length,
+          agree_pct: agree / total,
+          disagree_pct: disagree / total,
+          unknown_pct: unknown / total
         })
       })
   }
@@ -169,9 +184,57 @@ class ArcVisualization extends React.Component {
       ]
     }
 
+    const horizontalBar = {
+      data: [
+        {
+          type: "stackedBar100",
+          dataPoints: [
+            {
+              x: 0, 
+              y: this.state.agree_pct,
+              label: 'favor',
+              color: 'rgba(124,191,56,1)'
+            },
+            {
+              x: 0, 
+              y: this.state.unknown_pct,
+              label: 'unknown',
+              color: 'rgba(0,0,0,0.5)'
+            },
+            {
+              x: 0, 
+              y: this.state.disagree_pct,
+              label: 'oppose',
+              color: 'rgba(205,82,82,1)',
+            }
+          ],
+          options: {
+
+          }
+        }
+      ],
+      legend: {
+        verticalAlign: "bottom",
+        horizontalAlign: "left",
+        fontColor: 'rgba(0,0,0,0)'
+      },
+      axisY: {
+        gridColor: 'rgba(0,0,0,0)',
+        labelFontColor: 'rgba(0,0,0,0)',
+        tickLength: 0,
+      },
+      axisX: {
+        gridColor: 'rgba(0,0,0,0)',
+        labelFontColor: 'rgba(0,0,0,0)',
+        tickLength: 0,
+        
+      },
+    }
+
     return (
       <div>
         <CanvasJSChart options={options} />
+        <CanvasJSChart options={horizontalBar} />
       </div >
     );
   }
