@@ -16,14 +16,26 @@ main {
   width: 100vw;
 }
 
-section {
+main > section {
   margin-top: 5em;
 }
 
-h1 {
+h1, h2, h3 {
   font-family: 'Domine', serif;
   font-size: 35px;
   font-weight: 100;
+}
+
+h1 {
+  font-size: 35px;
+}
+
+h2 {
+  font-size: 25px;
+}
+
+h3 {
+  font-size: 15px;
 }
 
 input, label {
@@ -63,4 +75,52 @@ button:focus, button:active {
   font-size: 50px;
   font-family: 'Roboto', sans-serif;
   margin-left: 50px;
+}
+
+.example {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.summary .texts p {
+  margin-top: 10px;
+}
+
+.senator h3 {
+  margin-top: 10px;
+}
+
+.senator p {
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+.example section {
+  margin-top: 2em;
+}
+
+.summary {
+  width: 20%;
+}
+
+.display-senators {
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+}
+
+.display-senators .senator {
+  margin: 1em;
+  width: 120px;
+}
+
+.display-senators img {
+  width: 120px;
+  border-top: 8px solid #CD5252;
+}
+
+.senator p span {
+  color: #CD5252;
+  font-weight: 500;
 }
