@@ -45,17 +45,36 @@ h3 {
 input, label {
   border: 0.1px solid black;
   height: 35px;
-  padding: 3px;
-  padding-left: 10px;
+  padding: 1px;
+  padding-left: 15px;
+}
+
+input::placeholder {
+  color: #C4C4C4;
+  font-weight: 300;
+}
+
+button, button:hover {
+  transition-property: color;
+  transition-property: background-color;
+  transition-duration: .3s;
+  transition-timing-function: ease-in-out;
 }
 
 button {
+  background-color: white;
+  color: black;
   border: none;
 }
 
 button:focus, button:active {
   border: none;
   outline: none;
+}
+
+button:hover {
+  color: #ffffff;
+  background-color: black;
 }
 
 #search-section {
@@ -75,13 +94,26 @@ button:focus, button:active {
 }
 
 #search-bar button {
+  transition: none;
   border: none;
   font-size: 50px;
   font-family: 'Roboto', sans-serif;
   margin-left: 50px;
 }
 
-#suggestions {
+#search-bar button, #search-bar button:hover {
+  transition-property: margin-left;
+  transition-duration: .3s;
+  transition-timing-function: ease-in-out;
+}
+
+#search-bar button:hover {
+  background-color: white;
+  color: black;
+  margin-left: 60px;
+}
+
+#hot-topics {
   margin-top: 20vh;
 }
 
@@ -114,6 +146,7 @@ button:focus, button:active {
 }
 
 .display-senators {
+  padding: 10px;
   display: flex;
   flex-direction: row;
   width: 60%;
@@ -132,8 +165,12 @@ button:focus, button:active {
   margin-left: 16em;
 }
 
-.suggestion-buttons button {
+.hot-topics-buttons button {
   border: 0.1px solid black;
   padding: 15px 30px 15px 30px;
   margin-right: 1em;
+}
+
+.hidden {
+  display: none;
 }
