@@ -42,9 +42,16 @@ class ArcVisualization extends React.Component {
       for (let row = 0; row < 6; row++) {
         for (let col = 0; col < 21; col++) {
           let p = Math.random();
+          let name = '---';
+          let state = 'XX';
+          let pic = '';
           
           if (this.state.data !== null) {
-            p = this.state.data[m++].agree;
+            p = this.state.data[m].agree;
+            name = this.state.data[m].name;
+            state = this.state.data[m].state
+            let namesplit = name.split(' ');
+            pic = `<img src="${URL}/static/base/${state}-${namesplit[namesplit.length - 1]}.jpg" width=50 height=50>`
           }
           
           let c = '0,0,0';
@@ -63,15 +70,17 @@ class ArcVisualization extends React.Component {
           }
 
           dataPoints.push({
-            name: 'Norton Pengra',
-            state: 'WA',
+            name: name,
+            state: state,
             x: row,
             y: col,
             p: p,
             markerColor: `rgba(${c},${i})`,
             markerSize: 9,
-            img: `<img src="${URL}/static/base/wa-larsen.jpg" width=50 height=50>`
-          });
+            img: pic
+          })
+
+          m++;
         }
       }
     } else if (members === 435) {
