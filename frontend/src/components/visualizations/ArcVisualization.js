@@ -4,7 +4,7 @@ import CanvasJSReact from '../../lib/canvasjs.react'
 const CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 class ArcVisualization extends React.Component {
-  // Props: Rows, Total
+  // Props: prompt, chamber
   constructor(props) {
     super(props);
     this.state = {
@@ -13,9 +13,13 @@ class ArcVisualization extends React.Component {
   }
 
   render = () => {
+    let members;
 
-    const members = 435;
-
+    if (this.props.chamber === 'lower') {
+      members = 435;
+    } else if (this.props.chamber === 'upper') {
+      members = 100;
+    }
     let dataPoints = [];
     if (members === 100) {
       for (let row = 0; row < 6; row++) {
@@ -73,7 +77,6 @@ class ArcVisualization extends React.Component {
         }
       }
     }
-    
 
     const options = {
       legend: {
