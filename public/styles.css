@@ -101,9 +101,16 @@ button:hover {
   margin-left: 50px;
 }
 
+#search-bar button, #search-bar button:hover {
+  transition-property: margin-left;
+  transition-duration: .3s;
+  transition-timing-function: ease-in-out;
+}
+
 #search-bar button:hover {
   background-color: white;
   color: black;
+  margin-left: 60px;
 }
 
 #hot-topics {
