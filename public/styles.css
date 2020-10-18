@@ -369,3 +369,7 @@ main section section {
 .hidden {
   display: none !important;
 }
+
+#how-it-works {
+  margin-bottom: 15vh;
+}
