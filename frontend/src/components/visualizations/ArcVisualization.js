@@ -43,7 +43,9 @@ class ArcVisualization extends React.Component {
   }
 
   componentDidMount = () => {
-    this.retrievePrediction()
+    if (this.props.prompt === undefined || this.props.prompt.length >= 0) {
+      this.retrievePrediction()
+    }
   }
 
   render = () => {
