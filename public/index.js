@@ -21,26 +21,26 @@
   }
 
   function getQueryResult() {
-    console.log("sending request...");
+    let senateLine = id("senate-line");
+    drawAnalysisLine(senateLine.children[0], senateLine.children[1], id("senate-percentages"), 0.7);
+
+    let houseLine = id("house-line");
+    drawAnalysisLine(houseLine.children[0], houseLine.children[1], id("house-percentages"), 0.65);
+
+    let sections = qsa("main > section");
+    sections.forEach((section) => {
+      section.classList.toggle("hidden");
+    });
   }
 
-  /**
-   * Checks the status of a response. Throws an error if the response is not ok.
-   * @param {object} response - The response returned from a fetch request.
-   * @returns {object} The same response passed in if it is ok, throws an error if not.
-   */
-  function checkStatus(response) {
-    if (response.ok) {
-      return response;
-    }
-    throw Error("Error in request: " + response.statusText);
-  }
+  function drawAnalysisLine(yesLine, noLine, percentages, percentYes) {
+      yesLine.style.width = Math.round(percentYes * 500) + "px";
+      noLine.style.width = Math.round((1 - percentYes) * 500) + "px";
 
-  /**
-   * Handles an error in the fetch call by displaying the error message and disabling all buttons.
-   */
-  function handleError() {
-    console.log("error");
+      percentages.children[0].innerHTML = Math.round(percentYes * 100) + "%";
+      percentages.children[1].innerHTML = Math.round((1 - percentYes) * 100) + "%";
+
+      console.log(yesLine.style.width)
   }
 
   /** ------------------------- Helper Functions  ------------------------- */

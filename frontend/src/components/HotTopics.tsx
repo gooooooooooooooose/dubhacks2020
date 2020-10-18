@@ -20,9 +20,8 @@ class HotTopics extends Component<HotTopicsProps> {
       return (
          <section id="hot-topics">
             <h1>Hot Topics</h1>
-            <Example topic="Cut taxes"
-                     summary="While cutting taxes could implicate a variety of tax policies, including income and
-                        business taxes, this is evalutated with all of them in mind and in a general sense."
+            <Example topic="Defund police"
+                     summary="Decreasing the funding of law enforcement in response to the brutality used by the police, especially on Black Americans recently following George Floyd."
                      exampleSenators={this.populateSenators()}>
             </Example>
             <Example topic="Cut taxes"

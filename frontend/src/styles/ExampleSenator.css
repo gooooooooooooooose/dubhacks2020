@@ -24,3 +24,7 @@
    width: 120px;
    max-height: 120px;
 }
+
+#senator-image {
+   border-top: 8px solid #CD5252
+}

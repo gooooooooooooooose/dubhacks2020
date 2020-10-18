@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { getDefaultCompilerOptions } from 'typescript';
 import '../styles/ExampleSenator.css';
 
 interface ExampleSenatorProps {
@@ -24,17 +25,29 @@ class ExampleSenator extends Component<ExampleSenatorProps> {
    // I -> #DFC01E
    // ALSO give the <span> style="color:#<color>"
 
+   getColor = (): any => {
+      if (this.props.party === "R") {
+         return "#CD5252";
+      } else if (this.props.party === "D") {
+         return "#4F67E4";
+      } else {
+         return "#DFC01E";
+      }
+   }
+
    render() {
+      const imgStyle = {
+         borderTop: '8px solid' + this.getColor()
+      }
+
       return (
          <section className="senator">
-            <img src={ require("../resources/tn-alexander.png") }/>
+            <img id="senator-image"
+                 style={imgStyle}
+                 src={ require("../resources/tn-alexander.png") }/>
             <h3>{this.props.name}</h3>
-            <p>
-               <span>
-                  [{this.props.party}]
-               </span> 
-               {this.props.state} {this.props.type}
-            </p>
+            <p id="senator-party"> [{this.props.party}] </p>
+            <p>{this.props.state} {this.props.type}</p>
          </section>
       )
    }
