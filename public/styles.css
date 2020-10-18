@@ -367,5 +367,9 @@ main section section {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
+}
+
+#how-it-works {
+  margin-bottom: 15vh;
 }
