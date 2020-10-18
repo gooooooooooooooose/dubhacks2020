@@ -4,7 +4,7 @@ import HotTopics from './components/HotTopics';
 import SearchSection from './components/SearchSection';
 import HowItWorks from './components/HowItWorks';
 import HotBills from './components/HotBills';
-import ArcVisualizations from './components/visualizations/ArcVisualizations';
+import ArcVisualization from './components/visualizations/ArcVisualization';
 
 interface AppState {
   query: string;
@@ -25,24 +25,11 @@ class App extends Component<{}, AppState> {
   onQuerySubmit = (newQuery: string) => {
     this.setState({
       query: newQuery,
-      chamber: "senate"
+      chamber: "house"
     });
-    this.updateDisplay();
   }
-
-  updateDisplay = (): any => {
-    if (this.state.query === ""){
-      return "none";
-    } else {
-      return "block";
-    }
-  }
-
 
   render() {
-    const visualizationStyle = {
-      display: this.updateDisplay()
-    }
 
     return (
         <main>
@@ -50,7 +37,8 @@ class App extends Component<{}, AppState> {
               <img src={ require('./resources/standpoint_logo.svg') }/>
             </header>
             <SearchSection onChange={this.onQuerySubmit}></SearchSection>
-            <ArcVisualizations prompt={this.state.query}></ArcVisualizations>
+            <ArcVisualization prompt={this.state.query}
+                              chamber={this.state.chamber}/>
             <HowItWorks></HowItWorks>
             <HotTopics></HotTopics>
             <HotBills></HotBills>

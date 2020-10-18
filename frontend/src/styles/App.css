@@ -1,15 +1,17 @@
 /* 
   Copyright 2020
   Idess Lee, Mitchell Massie for DubHacks 2020
- */
+*/
 
- * {
+/*
+* {
   margin: 0;
   padding: 0;
   background-color: #FBFAF9;
   overflow-x: hidden;
   font-family: 'Roboto', sans-serif;
 }
+*/
 
 main {
   display: flex;

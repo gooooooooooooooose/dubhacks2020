@@ -42,13 +42,15 @@ class ArcVisualization extends React.Component {
       })
   }
 
-  componentDidMount = () => {
-    if (this.props.prompt === undefined || this.props.prompt.length >= 0) {
+  componentDidUpdate = () => {
+    console.log("prompt: " + this.props.prompt + " prompt length: " +  this.props.prompt.length);
+    if (this.props.prompt !== undefined && this.props.prompt.length > 0) {
       this.retrievePrediction()
     }
   }
 
   render = () => {
+    
     let members;
 
     if (this.props.chamber === 'house') {
