@@ -1,8 +1,6 @@
 import React from 'react';
-import { Chart } from 'react-charts'
 
 import CanvasJSReact from '../../lib/canvasjs.react'
-const CanvasJS = CanvasJSReact.CanvasJS;
 const CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 class ArcVisualization extends React.Component {
@@ -49,7 +47,7 @@ class ArcVisualization extends React.Component {
           });
         }
       }
-    } else if (members == 435) {
+    } else if (members === 435) {
       for (let row = 0; row < 16; row++) {
         for (let col = 0; col < 30; col++){
           let p = Math.random();
@@ -80,7 +78,8 @@ class ArcVisualization extends React.Component {
     const options = {
       legend: {
         verticalAlign: "bottom",
-        horizontalAlign: "left"
+        horizontalAlign: "left",
+        fontColor: 'rgba(0,0,0,0)'
       },
       axisY: {
         gridColor: 'rgba(0,0,0,0)',
@@ -91,9 +90,6 @@ class ArcVisualization extends React.Component {
         gridColor: 'rgba(0,0,0,0)',
         labelFontColor: 'rgba(0,0,0,0)',
         tickLength: 0,
-      },
-      legend: {
-        fontColor: 'rgba(0,0,0,0)'
       },
       data: [
         {
